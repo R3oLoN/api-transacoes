@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active:
+      - dev
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/pismo
+    username: pismo_system
+    name: TransacoesDS
+    driver-class-name: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      register-mbeans: true
+      pool-name: TransacoesPool
+      connection-timeout: 30000
+      idle-timeout: 60000
+      max-lifetime: 180000
+      minimum-idle: 1
+      maximum-pool-size: 5
+  liquibase:
+    change-log: classpath:db/changelog/db_changelog_master.xml
+    url: jdbc:postgresql://localhost:5432/pismo
+    user: pismo_owner
+    driver-class-name: org.postgresql.Driver
+    liquibase-schema: public
+    test-rollback-on-update: true
+
+
+
+

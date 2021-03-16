@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    password: ${DATABASE_PASSWORD}
+  liquibase:
+    contexts: test
+    password: ${DATABASE_PASSWORD}

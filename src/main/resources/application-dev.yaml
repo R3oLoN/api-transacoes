@@ -1,0 +1,10 @@
+logging:
+  level:
+    "liquibase" : info
+
+spring:
+  datasource:
+    password: ${DATABASE_PASSWORD:pismo_system}
+  liquibase:
+    contexts: dev
+    password: ${DATABASE_PASSWORD:omsip}
