@@ -20,6 +20,16 @@ spring:
       max-lifetime: 180000
       minimum-idle: 1
       maximum-pool-size: 5
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      javax.persistence.validation.mode: none
+      hibernate.jdbc.lob.non_contextual_creation: true
+      hibernate.enable_lazy_load_no_trans: true
+      hibernate.format_sql: true
+      hibernate.temp.use_jdbc_metadata_defaults: false
+
   liquibase:
     change-log: classpath:db/changelog/db_changelog_master.xml
     url: jdbc:postgresql://localhost:5432/pismo
