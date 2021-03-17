@@ -1,0 +1,31 @@
+version: '3.1'
+
+services:
+  database:
+    image: postgres:13.2-alpine
+    restart: always
+    environment:
+      POSTGRES_DB: pismo
+      POSTGRES_USER: pismo_owner
+      POSTGRES_PASSWORD: omsip
+    networks:
+      - backend
+    ports:
+      - 5432:5432
+
+  web:
+    build: .
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      ACTIVE_PROFILE: test
+      LIQUIBASE_CONTEXTS: test
+      LIQUIBASE_PASSWORD: omsip
+      DATABASE_PASSWORD: '&faF32h9TRxLgL'
+    depends_on:
+      - database
+    networks:
+      - backend
+networks:
+  backend:

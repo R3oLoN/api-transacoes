@@ -64,26 +64,18 @@ ALTER USER pismo_read CREATEROLE;
 GRANT USAGE ON SCHEMA PISMO_OWNER TO  pismo_read;
 --rollback REVOKE USAGE ON SCHEMA PISMO_OWNER FROM pismo_read;
 
---changeset leandro.reolon:013 context:dev
-ALTER USER pismo_system WITH PASSWORD 'pismo_system';
---rollback not required
-
 --changeset leandro.reolon:013 context:test
-ALTER USER pismo_system WITH PASSWORD '&faF32h9TRxL%L';
---rollback not required
-
---changeset leandro.reolon:013 context:prod
-ALTER USER pismo_system WITH PASSWORD 'jABxqok2hA@BP7';
---rollback not required
-
---changeset leandro.reolon:014 context:dev
-ALTER USER pismo_read WITH PASSWORD 'pismo_read';
---rollback not required
-
---changeset leandro.reolon:014 context:test
-ALTER USER pismo_read WITH PASSWORD 'bK82JghR&WHULo';
+ALTER USER pismo_system WITH PASSWORD '&faF32h9TRxLgL';
 --rollback not required
 
 --changeset leandro.reolon:014 context:prod
-ALTER USER pismo_read WITH PASSWORD '548p2v%zGH2xGn';
+ALTER USER pismo_system WITH PASSWORD 'jABxqok2hA@BP7';
+--rollback not required
+
+--changeset leandro.reolon:015 context:test
+ALTER USER pismo_read WITH PASSWORD 'bK82JghR&WHULo';
+--rollback not required
+
+--changeset leandro.reolon:016 context:prod
+ALTER USER pismo_read WITH PASSWORD '548p2vfzGH2xGn';
 --rollback not required

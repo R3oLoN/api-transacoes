@@ -7,7 +7,6 @@ spring:
       - dev
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/pismo
     username: pismo_system
     name: TransacoesDS
     driver-class-name: org.postgresql.Driver
@@ -32,7 +31,6 @@ spring:
 
   liquibase:
     change-log: classpath:db/changelog/db_changelog_master.xml
-    url: jdbc:postgresql://localhost:5432/pismo
     user: pismo_owner
     driver-class-name: org.postgresql.Driver
     liquibase-schema: public

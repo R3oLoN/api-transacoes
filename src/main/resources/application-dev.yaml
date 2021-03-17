@@ -1,10 +1,11 @@
 logging:
   level:
     "liquibase" : info
-
 spring:
   datasource:
+    url: jdbc:postgresql://localhost:5432/pismo
     password: ${DATABASE_PASSWORD:pismo_system}
   liquibase:
     contexts: dev
     password: ${DATABASE_PASSWORD:omsip}
+    url: jdbc:postgresql://localhost:5432/pismo

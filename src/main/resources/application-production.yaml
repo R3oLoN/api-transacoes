@@ -1,9 +1,10 @@
 spring:
   datasource:
+    url: jdbc:postgresql://database:5432/pismo
     password: ${DATABASE_PASSWORD}
     hikari:
       minimum-idle: 3
       maximum-pool-size: 15
   liquibase:
-    contexts: prod
-    password: ${DATABASE_PASSWORD}
+    url: jdbc:postgresql://database:5432/pismo
+    password: ${LIQUIBASE_PASSWORD}

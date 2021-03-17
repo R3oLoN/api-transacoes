@@ -1,6 +1,8 @@
 spring:
   datasource:
+    url: jdbc:postgresql://database:5432/pismo
     password: ${DATABASE_PASSWORD}
   liquibase:
     contexts: test
-    password: ${DATABASE_PASSWORD}
+    url: jdbc:postgresql://database:5432/pismo
+    password: ${LIQUIBASE_PASSWORD}
