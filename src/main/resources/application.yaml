@@ -1,5 +1,41 @@
 server:
+  servlet:
+    context-path: /transacoes
   port: 8080
+  compression:
+    enabled: true
+    mime-types:
+      - application/json
+      - application/xml
+      - text/html
+      - text/xml
+      - text/plain
+
+info:
+  application: @project.name@
+  version: @project.version@
+
+management:
+  health:
+    db:
+      enabled: true
+  endpoints:
+    web:
+      base-path: '/'
+      path-mapping:
+        health: '/health/check'
+        info: '/health/alive'
+        prometheus: '/metrics'
+      exposure:
+        include:
+          - info
+          - health
+          - prometheus
+  endpoint:
+    health:
+      show-details: always
+      cache:
+        time-to-live: 60000
 
 spring:
   profiles:
@@ -35,7 +71,3 @@ spring:
     driver-class-name: org.postgresql.Driver
     liquibase-schema: public
     test-rollback-on-update: true
-
-
-
-
